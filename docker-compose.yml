@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: vanphongpham_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+
+  # THÊM ĐOẠN NÀY NẾU CHƯA CÓ
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
