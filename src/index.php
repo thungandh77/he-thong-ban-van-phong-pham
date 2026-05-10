@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 session_start();
 include 'db_connect.php'; 
 
@@ -199,3 +200,10 @@ $tong_doanh_thu = 15500000;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+=======
+  echo "<h1>Chào mừng đến với Website Văn Phòng Phẩm Online</h1>";
+  echo "<p>Dự án của Nhóm 14: Ngân, Nam, Nghĩa và Nhựt</p>";
+  echo "<hr>";
+  echo "Docker đã chạy thành công rồi đó Nhựt ơi!";
+?>
+>>>>>>> b5af0ad (Hoàn thành thiết lập Docker và chức năng Đăng ký Đăng nhập)
