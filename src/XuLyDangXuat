@@ -1,0 +1,23 @@
+<?php
+// Khởi động session để có quyền truy cập và xóa dữ liệu session hiện tại
+session_start(); 
+
+// Kiểm tra và xóa bỏ cookie session lưu trên trình duyệt nếu có
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
+
+// Giải phóng toàn bộ các biến session đang hoạt động
+session_unset(); 
+
+// Hủy bỏ hoàn toàn phiên làm việc (Session) trên hệ thống máy chủ
+session_destroy(); 
+
+// Tự động chuyển hướng tài khoản quay trở về trang chủ index.php
+header("Location: index.php"); 
+exit();
+?>
